@@ -16,18 +16,18 @@ import javax.swing.JOptionPane;
  *    high-level class. Did it work? Are the low-level instances
  *    interchangeable? The DIP requires this.
  * 
- * @author your name goes here
+ * @author Mark Urbanski
  */
 public class Startup {
-    public static enum ServiceQuality {
-           GOOD, FAIR, POOR
-    };
+//    public static enum ServiceQuality {
+//           GOOD, FAIR, POOR
+//    };
  
     public static void main(String[] args) {
         
         BaggageServiceTipCalculator service =
                 new BaggageServiceTipCalculator(
-                BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
+                ServiceQuality.FAIR,5);
         System.out.println(service.getTipForBaggeHandler());
         
     }
