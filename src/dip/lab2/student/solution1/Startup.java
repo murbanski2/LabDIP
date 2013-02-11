@@ -30,6 +30,10 @@ public class Startup {
                 ServiceQuality.FAIR,5);
         System.out.println(service.getTipForBaggeHandler());
         
+        //Using the new interface and changed FoodServiceTipCalculator
+        ServiceTipCalculator service1 = 
+                new FoodServiceTipCalculator(ServiceQuality.GOOD,40.00);
+        System.out.println(service1.getTip());
     }
 
 }

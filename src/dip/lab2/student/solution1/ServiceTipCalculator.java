@@ -9,5 +9,5 @@ package dip.lab2.student.solution1;
  * @author Mark Urbanski
  */
 public interface ServiceTipCalculator {
-    public abstract double getTip(ServiceQuality s, double serviceAmount);
+    public abstract double getTip();
 }

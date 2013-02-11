@@ -22,19 +22,18 @@ public class FoodServiceTipCalculator implements ServiceTipCalculator {
 //    }
     private ServiceQuality serviceQuality;
 
-    public FoodServiceTipCalculator() {
-        //Do nothing.  I will initialize the variables in getTip(). 
-   }
+//    public FoodServiceTipCalculator() {
+//        //Do nothing.  I will initialize the variables in getTip(). 
+//   }
     public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
         this.setServiceRating(q);
         this.setBill(billAmt);
     }
 
-    @Override
-    public double getTip(ServiceQuality q, double billAmt) {
+
+    public double getTip() {
         double tip = 0.00; // always initialize local variables
-        this.setServiceRating(q);
-        this.setBill(billAmt);
+
         
         switch(serviceQuality) {
             case GOOD:
