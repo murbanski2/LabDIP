@@ -8,7 +8,7 @@ package dip.lab2.student.solution1;
  *
  * @author your name goes here
  */
-public class BaggageServiceTipCalculator {
+public class BaggageServiceTipCalculator implements ServiceTipCalculator {
     private static final double MIN_BILL = 0.00;
     private static final double MAX_BILL = 100.00;
     private static final String BILL_ENTRY_ERR =
@@ -81,6 +81,11 @@ public class BaggageServiceTipCalculator {
                     "error: base tip must be greater than or equal to zero");
         }
         this.baseTipPerBag = baseTipPerBag;
+    }
+
+    @Override
+    public double getTip() {
+        return getTipForBaggeHandler();
     }
 
 }
