@@ -8,7 +8,7 @@ package dip.lab2.student.solution1;
  *
  * @author your name goes here
  */
-public class FoodServiceTipCalculator {
+public class FoodServiceTipCalculator implements ServiceTipCalculator {
     private static final double MIN_BILL = 0.00;
     private static final String BILL_ENTRY_ERR =
             "Error: bill must be greater than or equal to " + MIN_BILL;
@@ -22,14 +22,20 @@ public class FoodServiceTipCalculator {
 //    }
     private ServiceQuality serviceQuality;
 
+    public FoodServiceTipCalculator() {
+        //Do nothing.  I will initialize the variables in getTip(). 
+   }
     public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
         this.setServiceRating(q);
         this.setBill(billAmt);
     }
 
-    public double getTip() {
+    @Override
+    public double getTip(ServiceQuality q, double billAmt) {
         double tip = 0.00; // always initialize local variables
-
+        this.setServiceRating(q);
+        this.setBill(billAmt);
+        
         switch(serviceQuality) {
             case GOOD:
                 tip = bill * GOOD_RATE;
@@ -61,4 +67,5 @@ public class FoodServiceTipCalculator {
         return serviceQuality;
     }
 
+ 
 }
